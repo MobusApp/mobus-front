@@ -2,6 +2,7 @@ package com.example.mobus.controle
 
 
 import com.example.mobus.R
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
@@ -11,7 +12,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 /**
  * Utilitários para o maps
  */
-class MapsUtils constructor()
+class MapsUtils
 {
     //Função que devolve as marcações para colocar no mapa
     public fun addMarkers(googlemap :GoogleMap, nome: String, descricao: String, latitude: String, longitude: String)
@@ -35,10 +36,32 @@ class MapsUtils constructor()
 
     }
 
+    public fun calcPoints()
+    {
+
+    }
+
+    public fun alertProximity()
+    {
+
+    }
+
+    public fun zoomProximity(googlemap :GoogleMap)
+    {
+        googlemap.moveCamera(
+            CameraUpdateFactory.newLatLng(
+                LatLng(-34.0, 151.0)
+
+            )
+        )
+    }
+
+
     //Verificar duas Strings de coordenadas e devolve p formato para objeto addMarker
     private fun formatLatLog(latitude:String, longitude:String): LatLng
     {
         return LatLng(latitude.toDouble(),longitude.toDouble())
     }
+
 
 }

@@ -1,17 +1,17 @@
 package com.example.mobus.controle
 
+
+import com.example.mobus.model.BusDTO
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface Endpoint
 {
-    //Locais
-    @GET("/Places")
-    fun getPlaces() : Call<List<Places>>
 
+    //
+    @GET("/Bus/RetrieveGPS?id=")
+    fun getPlaces(): Call <BusDTO>
 
-    //Autorização
-    @GET("/Auth")
-    fun getAuth() : Call<List<Auth>>
+    @GET("/Bus/RetrieveAllGPS")
+    fun getAllPlaces(): Call <List<BusDTO>>
 }
-

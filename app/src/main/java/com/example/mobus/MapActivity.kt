@@ -2,22 +2,17 @@ package com.example.mobus
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.example.mobus.controle.Endpoint
-import com.example.mobus.controle.MapsUtils
-import com.example.mobus.controle.NetworkUtils
-import com.example.mobus.controle.Places
+import com.example.mobus.controle.*
+import com.example.mobus.model.BusDTO
 import com.google.android.gms.maps.SupportMapFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MapActivity()
-{
-    private val path : String = "http://192.168.0.112:5000"
+class MapActivity() {
+    private val path: String = "http://26.26.59.28:8081"
 
-    private fun loadApi(): Endpoint
-    {
+    private fun loadApi(): Endpoint {
         val retrofitClient = NetworkUtils
             .getRetrofitInstance(path)
 
@@ -29,43 +24,39 @@ class MapActivity()
      * mas com ela podemos fazer manipuções e deixar métodos
      * assíncronos
      */
-    public fun loadMap(comp : AppCompatActivity)
-    {
-        val places = loadApi().getPlaces()
+    public fun loadMap(comp: AppCompatActivity) {
         //intanciando utilitarios do mapa
         val mapsUtils: MapsUtils = MapsUtils()
 
+        val places = loadApi().getAllPlaces()
+
         //Transformando o map em um fragmento
         val mapFragment = SupportMapFragment.newInstance()
-            comp.supportFragmentManager
+        comp.supportFragmentManager
             .beginTransaction()
             .add(R.id.map_fragment, mapFragment)
             .commit()
 
 
         //Pesquisa e roda todos os itens da API
-        places.enqueue(object : Callback<List<Places>>
-        {
-            override fun onFailure(call: Call<List<Places>>, t: Throwable)
-            {
+        places.enqueue(object : Callback<List<BusDTO>> {
+            override fun onFailure(call: Call<List<BusDTO>>, t: Throwable) {
                 Toast.makeText(comp.baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<List<Places>>, response: Response<List<Places>>)
-            {
-                response.body()?.forEach {
-                    mapFragment.getMapAsync{ googleMap->
+            override fun onResponse(call: Call<List<BusDTO>>, response: Response<List<BusDTO>>) {
+                val res = response.body()
+
+                res?.forEach{ busDTO ->
+                    mapFragment.getMapAsync { googleMap ->
                         mapsUtils.addMarkers(googleMap,
-                            it.name.toString(),
-                            it.subs.toString(),
-                            it.lat.toString(),
-                            it.lat.toString()
+                            busDTO?.busLine.toString(),
+                            busDTO?.macAddress.toString(),
+                            busDTO?.latitude.toString(),
+                            busDTO?.longitude.toString()
                         )
-
                         //Quando o mapa carregar completamente
-                        googleMap.setOnMapLoadedCallback{
-
-                        }
+                        mapsUtils.zoomProximity(googleMap)
                     }
                 }
             }
