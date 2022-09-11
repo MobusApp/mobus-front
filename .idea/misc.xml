@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/drawable/background.xml" value="0.142" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/drawable/ic_launcher_background.xml" value="0.142" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/layout/activity_lobby.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/layout/activity_welcome.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/layout/menu_lobby.xml" value="0.10625" />
+        <entry key="..\:/Users/alyss/AndroidStudioProjects/mobus/app/src/main/res/menu/menu_main.xml" value="0.10625" />
       </map>
     </option>
   </component>
