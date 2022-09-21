@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
 
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
 
     <!--- Label Login -->

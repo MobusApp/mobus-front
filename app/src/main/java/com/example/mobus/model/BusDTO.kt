@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 class BusDTO
 {
+
     @SerializedName("id")
     @Expose
     var id: String? = null

@@ -1,7 +1,12 @@
-package com.example.mobus
+package com.example.mobus.view
+
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mobus.R
+import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 
 
 open class MainActivity : AppCompatActivity()
@@ -12,11 +17,10 @@ open class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val map : MapActivity = MapActivity()
-        //Eu confesso que não sei muito o porque ele pediu esse this...
-        //Mas que o AppCompatActivity tem que ser instanciado para que as classes
-        //do map rodem, por enquanto, está assim para testes.
+
+
+        //AppCompatActivity tem que ser instanciado para que as classes do map rodem
         map.loadMap(this)
 
     }
