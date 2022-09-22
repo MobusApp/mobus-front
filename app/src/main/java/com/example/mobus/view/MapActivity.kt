@@ -1,11 +1,8 @@
 package com.example.mobus.view
 
 
-
-
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobus.R
-
 import com.example.mobus.util.*
 
 
@@ -15,7 +12,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MapActivity() {
+class MapActivity()
+{
 
     /**
      * sem essa classe o map já aparece,
@@ -36,8 +34,6 @@ class MapActivity() {
 
         //onMapReady é um método assíncrono, então ele só vai ser executado quando o mapa estiver pronto
 
-
-
         //cria uma rotina para listar os pontos
         val job = CoroutineScope(Dispatchers.Main).launch {
             while (true)
@@ -49,7 +45,7 @@ class MapActivity() {
                     ApiUtils.getBusByLine(comp, it)
                 }
 
-                delay(1000)
+                delay(10000)
             }
         }
     }

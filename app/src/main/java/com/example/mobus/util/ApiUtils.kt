@@ -23,7 +23,8 @@ class ApiUtils()
     {
         private val BASE_URL: String = "http://192.168.0.112:8081"
 
-        public fun loadApi(): Endpoint {
+        public fun loadApi(): Endpoint
+        {
             val retrofitClient = NetworkUtils
                 .getRetrofitInstance(BASE_URL)
 

@@ -2,5 +2,6 @@
     <string name="app_name">mobus</string>
     <string name="open">Abrir</string>
     <string name="close">Fechar</string>
+    <string name="text_cadastro">Não tem conta? Cadastre-se</string>
 
 </resources>

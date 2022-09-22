@@ -4,9 +4,6 @@ package com.example.mobus.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobus.R
-import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.Dispatchers.Main
 
 
 open class MainActivity : AppCompatActivity()
@@ -17,7 +14,8 @@ open class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val map : MapActivity = MapActivity()
+        val welcomeActivity = WelcomeActivity()
+        val map = MapActivity()
 
 
         //AppCompatActivity tem que ser instanciado para que as classes do map rodem

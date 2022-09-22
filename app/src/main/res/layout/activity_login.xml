@@ -1,37 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/terminal"
-    android:orientation="vertical"
-    tools:context=".view.MainActivity">
+    tools:context=".view.MainActivity"
+
+    android:background="@drawable/terminal_sorocaba_sem_titulo">
 
     <!--- Label title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="450px"
         android:text="MOBUS"
         android:textColor="@color/white"
-        android:textSize="45sp"
-        android:textStyle="bold" />
-
-    <!--- Label Email -->
-
-    <!--- Label Senha -->
-
-    <!--- Botão logar -->
-    <Button
-        android:id="@+id/botao_logar"
-        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textSize="70sp"
+        android:shadowColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/LayPrimeiraCamada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <!---Primeira camada-->
+    <LinearLayout
+        android:id="@+id/LayPrimeiraCamada"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="Logar"
-        android:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <!--Segunda camada-->
+        <LinearLayout
+            android:id="@+id/laySegundaCamada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="300dp">
 
-</LinearLayout>
+            <!--- Caixa de texto login -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:id="@+id/etLogin"
+                android:background="@color/white"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint="Login"
+                app:startIconDrawable="@drawable/arrow"
+                app:endIconMode="clear_text">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!---gambiarra Temporaria-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="1px"/>
+
+            <!--- Caixa de texto Senha -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:id="@+id/etSenha"
+                android:background="@color/white"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:startIconDrawable="@drawable/cadeadoseguro"
+                app:endIconMode="password_toggle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--- Botão logar -->
+            <Button
+                style="@style/Button"
+                android:id="@+id/btnEntrar"
+                android:text="Entrar"
+                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white">
+
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="111dp"
+                android:linksClickable="true"
+                android:text="@string/text_cadastro"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
