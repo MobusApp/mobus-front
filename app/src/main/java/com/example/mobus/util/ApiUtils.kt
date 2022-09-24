@@ -8,12 +8,8 @@ import com.example.mobus.network.NetworkUtils
 import com.google.android.gms.maps.GoogleMap
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.HttpException
 import retrofit2.Response
-import rx.Observable
-import rx.Subscriber
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+
 
 
 class ApiUtils()
@@ -21,68 +17,36 @@ class ApiUtils()
 
     companion object
     {
-        private val BASE_URL: String = "http://192.168.0.112:8081"
-
-        public fun loadApi(): Endpoint
-        {
-            val retrofitClient = NetworkUtils
-                .getRetrofitInstance(BASE_URL)
-
-            return retrofitClient.create(Endpoint::class.java)
-        }
-
-        public fun getAllBus(comp: AppCompatActivity, googleMap: GoogleMap)
-        {
-            val api = loadApi().getAllBus()
-            val mapsUtils: MapsUtils = MapsUtils()
-
-
-            api.enqueue(object : Callback<List<BusDTO>>
-            {
-                override fun onFailure(call: Call<List<BusDTO>>, t: Throwable)
-                {
-                    Toast.makeText(comp.baseContext, t.message, Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onResponse(call: Call<List<BusDTO>>, response: Response<List<BusDTO>>)
-                {
-                    var res = response.body()
-
-                    res?.forEach { busDTO ->
-                        mapsUtils.addMarkers(googleMap,
-                            busDTO?.busLine.toString(),
-                            busDTO?.macAddress.toString(),
-                            busDTO?.latitude.toString(),
-                            busDTO?.longitude.toString()
-                        )
-                    }
-                }
-            })
-        }
+        private val BACK_URL: String = "http://192.168.0.112:8081"
+        private val MAPS_API_URL: String = "https://maps.googleapis.com/maps/api"
 
 
         public fun getBusByLine(comp: AppCompatActivity, googleMap: GoogleMap)
         {
-            val api = loadApi().getBusByLine()
-            val mapsUtils: MapsUtils = MapsUtils()
+            val api = NetworkUtils.getRetrofitInstance(BACK_URL).getBusByLine()
 
             api.enqueue(object : Callback<BusDTO>
             {
                 override fun onFailure(call: Call<BusDTO>, t: Throwable)
                 {
-                    Toast.makeText(comp.baseContext, t.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(comp, "Error: " + t.message, Toast.LENGTH_LONG).show()
                 }
 
                 override fun onResponse(call: Call<BusDTO>, response: Response<BusDTO>)
                 {
-                    var res = response.body()
+                    if (response.isSuccessful)
+                    {
+                        val busDTO: BusDTO = response.body()!!
 
-                    mapsUtils.addMarkers(googleMap,
-                        res?.busLine.toString(),
-                        res?.macAddress.toString(),
-                        res?.latitude.toString(),
-                        res?.longitude.toString()
-                    )
+                        MapsUtils.addOneMarker(
+                            googleMap,
+                            busDTO.busLine.toString(),
+                            busDTO.macAddress.toString(),
+                            busDTO.latitude.toString(),
+                            busDTO.longitude.toString()
+                        )
+
+                    }
                 }
             })
         }
