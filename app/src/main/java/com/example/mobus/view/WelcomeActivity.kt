@@ -13,11 +13,8 @@ import androidx.core.content.ContextCompat
 class WelcomeActivity
 {
 
-    //verifica permissões do mapa
-    public fun checkPermissions()
-    {
+    //verifica se o usuário já deu permissão para o app acessar a localização
 
-    }
 
     //verifica se o usuário já está logado
     public fun verifyLogin()

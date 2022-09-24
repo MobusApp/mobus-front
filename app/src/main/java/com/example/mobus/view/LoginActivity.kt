@@ -1,4 +1,5 @@
 package com.example.mobus.view
 
-class LoginActivity {
+class LoginActivity
+{
 }
