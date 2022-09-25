@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+
+    <!--- Label Login -->
+
+    <!--- Label Email -->
+
+    <ImageView
+        android:id="@+id/voltar"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:background="@drawable/arrow" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="186dp"
+        android:layout_height="104dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/user" />
+
+    <LinearLayout
+        android:id="@+id/bottomRedeSocial"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="90dp"
+            android:background="@drawable/gmail"
+            android:layout_marginLeft="100px"
+
+            />
+
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="90dp"
+            android:background="@drawable/facebook"
+            android:layout_marginLeft="450px"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="OU"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="93dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Primeiro Nome"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Segundo Nome"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp">
+
+            <EditText
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/edit_name"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                app:startIconDrawable="@drawable/ic_person"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+               />
+
+            <EditText
+                android:id="@+id/edit_lastname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Sobrenome" />
+
+        </LinearLayout>
+
+
+    </TableLayout>
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="E-mail"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="usuario@gmail.com.br" />
+
+        <TextView
+            android:id="@+id/text_Celular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Celular"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_DDD"
+                android:layout_width="96dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="+55" />
+
+            <EditText
+                android:id="@+id/edit_phone"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="15 988343620" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/text_senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Senha"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="*******"
+            android:inputType="textPassword" />
+
+        <Button
+
+            android:id="@+id/btn_Proximo"
+            android:layout_width="390dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/black"
+            android:gravity="center"
+            android:text="PROXIMO"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    />
+
+    <!--- Label Senha -->
+
+
+    <!--- Botão logar -->
+
+
+</LinearLayout>
