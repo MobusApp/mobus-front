@@ -101,11 +101,69 @@
         android:layout_weight=".5"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <WebView
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/pencil"
+            />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </WebView>
+            android:layout_height="wrap_content"
+            android:text="Edição"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="90dp">
+        </TextView>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@drawable/setaparadireita"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="90dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/setting"
+            android:layout_marginTop="115dp">
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configurações"
+            android:textSize="20sp"
+            android:layout_marginTop="125dp"
+            android:layout_marginLeft="90dp">
+        </TextView>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@drawable/setaparadireita"
+            android:layout_marginTop="103dp"
+            android:layout_marginLeft="90dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/informacao"
+            android:layout_marginTop="200dp">
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informações"
+            android:textSize="20sp"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="90dp">
+        </TextView>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@drawable/setaparadireita"
+            android:layout_marginTop="189dp"
+            android:layout_marginLeft="90dp">
+        </ImageView>
 
     </RelativeLayout>
 
