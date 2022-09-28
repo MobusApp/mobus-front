@@ -162,7 +162,7 @@
 
         <Button
             android:id="@+id/btn_Proximo"
-            android:layout_width="427dp"
+            android:layout_width="390dp"
             android:layout_height="64dp"
 
             android:layout_marginLeft="10dp"
