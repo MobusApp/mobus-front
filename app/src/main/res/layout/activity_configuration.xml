@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.mobus.view.MainActivity">
+
+    <RelativeLayout
+        android:background="@color/light_grey"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/user">
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textoConfiguration"
+            android:textSize="20sp"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="110dp">
+        </TextView>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="130dp"
+            android:text="@string/texto_config"
+            android:textSize="9sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/dark_grey">
+        </Button>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="@style/Button"
+            android:layout_marginTop="5dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/distancia"
+            android:layout_marginLeft="10dp">
+
+        </Button>
+
+        <Button
+            style="@style/Button"
+            android:layout_marginTop="5dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="150dp"
+            android:background="@drawable/message">
+        </Button>
+
+        <Button
+            style="@style/Button"
+            android:layout_marginTop="5dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="300dp"
+            android:background="@drawable/help">
+        </Button>
+
+        <Button
+            android:layout_width="380dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="105dp"
+            android:backgroundTint="@color/dark_grey"
+            android:text="@string/comercial_config"
+            android:textSize="16sp">
+        </Button>
+
+        <Button
+            android:layout_width="380dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/dark_grey"
+            android:layout_marginTop="200dp"
+            android:text="Segurança"
+            android:textSize="16sp">
+        </Button>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

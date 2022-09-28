@@ -3,5 +3,11 @@
     <string name="open">Abrir</string>
     <string name="close">Fechar</string>
     <string name="text_cadastro">Não tem conta? Cadastre-se</string>
-
+    <string name="textoConfiguration">EmailTeste@gmail.com</string>
+    <string name="texto_config">Configuração</string>
+    <string name="ajuda_config">Ajuda</string>
+    <string name="mensagem_config">Mensagens</string>
+    <string name="viagens_config">Viagens</string>
+    <string name="comercial_config">Comercial</string>
+    <string name="checagemsegunraca_config">Checagem de segurança</string>
 </resources>
